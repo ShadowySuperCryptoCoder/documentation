@@ -5,6 +5,15 @@ title: "Core Adapters"
 permalink: "docs/core-adapters/"
 whatsnext: {"Introduction to External Adapters":"/docs/external-adapters/", "Initiators":"/docs/initiators/"}
 ---
+
+# DEPRECATED
+
+NOTE: The style of adapter described below (otherwise known as a JSON adapter or V1 adapter) is deprecated and will be removed in Chainlink 1.0.0.
+
+Please refer to [V2 job tasks](/docs/tasks) instead.
+
+## Adapters
+
 Core adapters are the built-in functionality that every Chainlink node supports. Strung together, they act as tasks that need to be performed to complete a Job.
 
 Adapters that are prefixed with "Eth" refer to tasks that post data onto the chain. Here are some examples of the data types that adapters convert data to.

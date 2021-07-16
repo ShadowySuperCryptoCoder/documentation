@@ -5,6 +5,15 @@ title: "Initiators"
 permalink: "docs/initiators/"
 whatsnext: {"Introduction to External Initiators":"/docs/external-initiators-introduction/"}
 ---
+
+# DEPRECATED
+
+NOTE: Initiators are deprecated and will be removed in Chainlink 1.0.0.
+
+Please refer to [V2 jobs](/docs/jobs) instead.
+
+## Initiators
+
 [block:api-header]
 {
   "title": "Cron"
