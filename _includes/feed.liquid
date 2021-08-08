@@ -33,10 +33,21 @@ section: smartContract
     }
 </style>
 
+<div id="rollups-note">
+</div>
 
 <div id="feed-data">
     Loading feeds...
 </div>
+
+<script>
+    if(window.location.pathname === '/docs/arbitrum-price-feeds/') {
+        dest = document.getElementById('rollups-note');
+        let html = '';
+        html = '<rdme-callout theme="warn"><p>It`s recommended to use <a href="/docs/l2-sequencer-flag/">L2 Sequencer Health Flag</a> for all of the contracts on Arbitrum network!</p></rdme-callout>';
+        dest.innerHTML = html;
+    }
+</script>
 
 <script>
     dest = document.getElementById('feed-data');
