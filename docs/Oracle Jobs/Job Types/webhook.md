@@ -2,7 +2,7 @@
 layout: nodes.liquid
 date: Last Modified
 title: "Webhook Jobs"
-permalink: "docs/job-types/webhook"
+permalink: "docs/jobs/job-types/webhook/"
 ---
 
 Webhook jobs can be initiated by HTTP request, either by a user or external initiator.
@@ -28,3 +28,18 @@ observationSource   = """
 All webhook jobs can have runs triggered by a logged in user.
 
 Webhook jobs may additionally specify zero or more external initiators, which can also trigger runs for this job. The name must exactly match the name of the referred external initiator. The external initiator definition here must contain a `spec` which defines the JSON payload that will be sent to the External Initiator on job creation if the external initiator has a URL. If you don't care about the spec, you can simply use the empty JSON object.
+
+**Unique fields**
+
+- `externalInitiators`: an array of `{name, spec}` objects, where `name` is the name registered with the node, and `spec` is the job spec to be forwarded to the external initiator when it is created.
+
+**Shared fields**
+See [shared fields](/docs/jobs/#shared-fields).
+
+**Job type specific pipeline variables**
+
+- `$(jobSpec.databaseID)`: the ID of the job spec in the local database. You shouldn't need this in 99% of cases.
+- `$(jobSpec.externalJobID)`: the globally-unique job ID for this job. Used to coordinate between node operators in certain cases.
+- `$(jobSpec.name)`: the local name of the job.
+- `$(jobRun.meta)`: a map of metadata that can be sent to a bridge, etc.
+- `$(jobRun.requestBody)`: the body of the request that initiated the job run.
